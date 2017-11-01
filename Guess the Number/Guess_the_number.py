@@ -4,8 +4,6 @@ import sys
 from random import randint
 
 
-#while True:
-    #Program start here#######
 print("Ok, I'm thinking of a positive integer greather than 0 but less than 10,000.")
 number = randint(1, 9999)
 #print("testing: the number is", number)
