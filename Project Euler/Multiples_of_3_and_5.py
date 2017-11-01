@@ -4,24 +4,13 @@
 # Find the sum of all the multiples of 3 or 5 below 1000.
 import sys
 import math
+import time
 
-# def multipleOfThree():
-#     k = 1
-#     while k <= 333:
-#         print(3*k)
-#         k += 1
-#
-# def multipleOfFive():
-#     m = 1
-#     while m <= 199:
-#         print(5*m)
-#         m += 1
-
-# multipleOfThree()
-# multipleOfFive()
+start_time = time.clock()
 
 multiplesOfThree = range(0,1000,3)
 multiplesOfFive = range(0,1000,5)
+multiplesOfBoth = range(0,1000,15)
 
 listOfThree = []
 for i in multiplesOfThree:
@@ -31,16 +20,16 @@ listOfFive = []
 for j in multiplesOfFive:
     listOfFive.append(j)
 
-sumAll = sum(listOfFive+listOfThree)
+mergedList = list(set(listOfThree + listOfFive))
 
+sumAll = sum(list(mergedList))
 
 print()
-print("Multiples of 3 below 1000:")
-print(listOfThree)
+print("Multiples of 3 & 5 below 1000:")
+print(mergedList)
 print()
-print()
-print("Multiples of 5 below 1000:")
-print(listOfFive)
 print()
 print()
 print("The sum of all multiples of 3 and 5 below 1000 is: ",sumAll)
+print()
+print("Calculation took", round(time.clock() - start_time,5), "seconds")
